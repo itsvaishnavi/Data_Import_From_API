@@ -45,18 +45,18 @@ updatedAt datetime
 
 CREATE TABLE subscriptions(
 bill_id int NOT NULL IDENTITY (1,1) PRIMARY KEY,
-id varchar(1000),
-createdAt datetime,
-startDate datetime,
-endDate datetime,
-subscription_status varchar(10),
-amount float,
+id varchar(1000) NOT NULL,
+createdAt datetime NOT NULL,
+startDate datetime NOT NULL,
+endDate datetime NOT NULL,
+subscription_status varchar(10) NOT NULL,
+amount float NOT NULL,
 FOREIGN KEY (id) REFERENCES users(id)
 );
 
 CREATE TABLE message_table(
 id varchar(1000) PRIMARY KEY,
-createdAt datetime,
-sender_id varchar(1000),
-receiver_id varchar(1000)
+createdAt datetime NOT NULL,
+sender_id varchar(1000) NOT NULL,
+receiver_id varchar(1000) NOT NULL
 );
